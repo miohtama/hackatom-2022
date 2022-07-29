@@ -2,6 +2,7 @@
 
 - [See the TheGraph hosted deployment](https://thegraph.com/hosted-service/subgraph/miohtama/hackatom-2022).
 - [Read the instructions for setting up Osmosis JSON-RPC node](./osmosisd-management.md)
+- [Read the instructions for setting up Beaker on macOS](./beaker.md)
 
 # Example query
 

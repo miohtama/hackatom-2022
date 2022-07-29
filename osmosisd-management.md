@@ -1,10 +1,15 @@
 # Running Osmosis node (osmosisd) for JSON-RPC
 
+## Docs
+
+- [Osmosis documentation](https://docs.osmosis.zone/)
+- [Use MintScan as explorer](https://www.mintscan.io/osmosis)
+
 ## Installation
 
 - Ubuntu Linux 22.04
 
-- [https://get.osmosis.zone/](Use interactive installed).
+- [Use interactive installed](https://get.osmosis.zone/).
 
 - Ports are open to public by default
     - RPC 1317
@@ -15,6 +20,8 @@
 - Installer will drop systemd file at `/lib/systemd/system/osmosisd.service`
 
 ## View logs
+
+Tail from journald:
 
 ```shell
 journalctl -fu osmosisd
@@ -76,15 +83,16 @@ Are you synced?
 Get the latest block
 
 ```shell
-osmosisd status | grep latest
+osmosisd status
 ```
 
 Check 
 
-- latest_block_time
-- latest_block_height
+- `latest_block_time`
+- `latest_block_height`
+- `catching_up`
 
-[Compare to MintScan result](https://www.mintscan.io/osmosis).
+[You can compare the latest block height to MintScan status](https://www.mintscan.io/osmosis).
 
 # Using RPC
 
