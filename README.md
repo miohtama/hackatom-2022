@@ -1,6 +1,7 @@
 # Modified Osmosis Token Swap Example
 
-[See the TheGraph hosted deployment](https://thegraph.com/hosted-service/subgraph/miohtama/hackatom-2022).
+- [See the TheGraph hosted deployment](https://thegraph.com/hosted-service/subgraph/miohtama/hackatom-2022).
+- [Read the instructions for setting up Osmosis JSON-RPC node](./osmosisd-management.md)
 
 # Example query
 
