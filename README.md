@@ -2,6 +2,19 @@
 
 [See the TheGraph hosted deployment](https://thegraph.com/hosted-service/subgraph/miohtama/hackatom-2022).
 
+# Example query
+
+```graphql
+{
+  tokenSwaps(first: 7, orderBy: blockNumber, orderDirection: desc) {
+    id
+    blockNumber
+    timestamp
+    sender
+  }
+}
+```
+
 # Redeploy
 
 To deploy on the TheGraph hosted service:
