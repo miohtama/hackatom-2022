@@ -9,6 +9,10 @@ type TokenSwap @entity {
 
   blockNumber: BigInt! 
 
+  # Transaction hash
+  # TODO: Not currently available
+  # txhash: String;
+  
   # timestamp of block in which the swap was created
   timestamp: BigInt!
 

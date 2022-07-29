@@ -6,12 +6,16 @@ export function handleSwaps(data: cosmos.EventData): void {
   const sender = data.event.getAttributeValue("sender");
   const poolId = data.event.getAttributeValue("pool_id");
 
+  // TODO: this should be txhas - event id
   let swap = new TokenSwap(`${height}-${sender}`);
   swap.sender = sender;
   swap.poolId = poolId;
+  
   swap.blockNumber =  BigInt.fromString(data.block.header.height.toString());
   // https://github.com/graphprotocol/example-subgraphs/blob/2e8dc502ca5a5b801b69b89f8e769e98825452c3/cosmos/block-filtering/src/mapping.ts#L11
   swap.timestamp = BigInt.fromString(data.block.header.time.seconds.toString());
+  // Example swap
+  // https://www.mintscan.io/osmosis/txs/26D91921AA1E7A0F83A475E8C05CA9EF94932D0889BBE8752C07382C5714C030
   swap.tokenIn = saveToken(`${height}-${sender}-in`, data.event.getAttributeValue("tokens_in"));
   swap.tokenOut = saveToken(`${height}-${sender}-out`, data.event.getAttributeValue("tokens_out"));
 
