@@ -6,6 +6,12 @@ type Token @entity {
 
 type TokenSwap @entity {
   id: ID!
+
+  blockNumber: BigInt! 
+
+  # timestamp of block in which the swap was created
+  timestamp: BigInt!
+
   sender: String
   poolId: String
   tokenIn: Token

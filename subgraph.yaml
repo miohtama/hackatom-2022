@@ -1,6 +1,6 @@
 specVersion: 0.0.5
-description: Osmosis Token Swaps Example
-repository: https://github.com/graphprotocol/example-subgraph
+description: HackAtom 2022 placeholder
+repository: https://github.com/miohtama/hackatom-2022
 schema:
   file: ./schema.graphql
 dataSources:

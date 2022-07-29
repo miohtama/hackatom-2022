@@ -1,4 +1,4 @@
-import { cosmos } from "@graphprotocol/graph-ts";
+import { BigInt, cosmos } from "@graphprotocol/graph-ts";
 import { TokenSwap, Token } from "../generated/schema";
 
 export function handleSwaps(data: cosmos.EventData): void {
@@ -9,6 +9,9 @@ export function handleSwaps(data: cosmos.EventData): void {
   let swap = new TokenSwap(`${height}-${sender}`);
   swap.sender = sender;
   swap.poolId = poolId;
+  swap.blockNumber =  BigInt.fromString(data.block.header.height.toString());
+  // https://github.com/graphprotocol/example-subgraphs/blob/2e8dc502ca5a5b801b69b89f8e769e98825452c3/cosmos/block-filtering/src/mapping.ts#L11
+  swap.timestamp = BigInt.fromString(data.block.header.time.seconds.toString());
   swap.tokenIn = saveToken(`${height}-${sender}-in`, data.event.getAttributeValue("tokens_in"));
   swap.tokenOut = saveToken(`${height}-${sender}-out`, data.event.getAttributeValue("tokens_out"));
 
